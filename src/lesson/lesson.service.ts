@@ -19,4 +19,10 @@ export class LessonService {
         });
         return this.lessonRepository.save(lesson);
     }
+
+    async getLesson(id:string):Promise<Lesson>{
+        return this.lessonRepository.findOne({
+            id
+        })
+    }
 }

@@ -10,13 +10,10 @@ constructor(
 ){}
 
     @Query(returns=>LessonType)
-    lesson(){
-        return{
-            id:'adedgr897',
-            name:'Phsysics Class',
-            startDate: (new Date()).toISOString(),
-            endDate: (new Date()).toISOString()
-        }
+    lesson(
+        @Args('id') id:string,
+    ){
+        return this.lessonService.getLesson(id);
     }
 
     @Mutation(returns=>LessonType)
